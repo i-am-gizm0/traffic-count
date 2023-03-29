@@ -9,14 +9,16 @@
     $: keys = approach === 'l' ? {
         left: 'a',
         straight: 'w',
-        right: 'd'
+        right: 'd',
+        pedestrian: 's'
     } : {
         left: 'left',
         straight: 'up',
-        right: 'right'
+        right: 'right',
+        pedestrian: 'down'
     }
 
-    $: allKeys = `${keys.left},${keys.straight},${keys.right},shift+${keys.left},shift+${keys.straight},shift+${keys.right},space+${keys.left},space+${keys.straight},space+${keys.right}`;
+    $: allKeys = `${keys.left},${keys.straight},${keys.right},${keys.pedestrian},shift+${keys.left},shift+${keys.straight},shift+${keys.right}`;
 
     $: keys && hotkeys(
         allKeys,
@@ -31,8 +33,9 @@
         event.preventDefault();
 
         // Pedestrian
-        if (hotkeys.isPressed('space')) {
+        if (hotkeys.isPressed(keys.pedestrian)) {
             recordVehicle(approach, 'pedestrian');
+            return;
         }
 
         // Shift: Heavy
@@ -64,14 +67,17 @@
     <span
         class="key"
     >↱</span>
+    <span>🚶</span>
     {#if approach == 'l'}
         <kbd>A</kbd>
         <kbd>W</kbd>
         <kbd>D</kbd>
+        <kbd>S</kbd>
     {:else}
         <kbd>←</kbd>
         <kbd>↑</kbd>
         <kbd>→</kbd>
+        <kbd>↓</kbd>
     {/if}
 </div>
 
@@ -79,7 +85,7 @@
     div.grid {
         max-width: 500px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 1ch;
         place-items: baseline center;
