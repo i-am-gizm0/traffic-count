@@ -1,18 +1,15 @@
-# create-svelte
+# Traffic Count
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A simple tool for conducting intersection analysis by counting vehicles.
 
-## Creating a project
+## Using
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Once the app is deployed, open it in your browser. Set the name of the approach roads then use the displayed keyboard shortcuts to count vehicles. `A,W,D` count vehicles turning from the left approach and the left, up, and right arrows count vehicles from the right approach.  
+Hold `Shift` and press a direction key to count a heavy vehicle or hold `Space` and press a direction key for a pedestrian or other vulnerable user.  
+  
+You may print the table or save as a PDF using either the normal keyboard shortcut (`Ctrl/Command+P`) or the "Print/Save as PDF" button at the top-right.  
+You may download the raw data as a CSV (open in Excel) using the button at the top-right.  
+You can reset all data by using the "Reset" button. You must then confirm that you want to (it's irreversable!) and it will completely reset the app.
 
 ## Developing
 
@@ -34,5 +31,3 @@ npm run build
 ```
 
 You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
