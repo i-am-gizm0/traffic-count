@@ -38,4 +38,4 @@ jobs:
         run: |
           [[ -z "$DEPLOY_DIR" ]] && { echo "SECRET EMPTY!!! WOULD NUKE THE SYSTEM"; exit 1; }
           rm -rf "${DEPLOY_DIR}/*"
-          cp -v ./* $DEPLOY_DIR
+          cp -rv ./ $DEPLOY_DIR
