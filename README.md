@@ -13,7 +13,7 @@ You can reset all data by using the "Reset" button. You must then confirm that y
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned the repository and installed dependencies with `npm install`, start a development server:
 
 ```bash
 npm run dev
@@ -24,10 +24,12 @@ npm run dev -- --open
 
 ## Building
 
-To create a production version of your app:
+To create a production version of the app:
 
 ```bash
 npm run build
 ```
+
+It will generate a statically-servable HTML/JS/CSS version of the site in the `build` directory.
 
 You can preview the production build with `npm run preview`.
