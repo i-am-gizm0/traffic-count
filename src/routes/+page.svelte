@@ -319,6 +319,10 @@
     p {
         text-align: center;
     }
+
+    details {
+        width: 100%;
+    }
 </style>
 
 <svelte:head>
